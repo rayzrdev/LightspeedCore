@@ -13,11 +13,6 @@ public class CommandKick implements ICommandHandler {
     }
 
     @Override
-    public String getPermission() {
-        return "kick";
-    }
-
-    @Override
     public CommandResult onCommand(CommandContext ctx) {
         if (!ctx.hasArgs()) {
             return CommandResult.SHOW_USAGE;

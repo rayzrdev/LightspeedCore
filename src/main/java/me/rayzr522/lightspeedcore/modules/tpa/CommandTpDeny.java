@@ -23,11 +23,6 @@ public class CommandTpDeny extends ModuleCommand<TpaModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "tpdeny";
-    }
-
-    @Override
     public List<String> getAliases() {
         return Collections.singletonList("tpno");
     }

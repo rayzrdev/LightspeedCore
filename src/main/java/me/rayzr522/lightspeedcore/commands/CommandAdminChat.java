@@ -22,11 +22,6 @@ public class CommandAdminChat implements ICommandHandler {
     }
 
     @Override
-    public String getPermission() {
-        return "adminchat";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

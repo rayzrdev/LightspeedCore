@@ -24,11 +24,6 @@ public class CommandPVPToggle extends ModuleCommand<PVPToggleModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "pvptoggle";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

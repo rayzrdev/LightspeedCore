@@ -22,11 +22,6 @@ public class CommandTpa extends ModuleCommand<TpaModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "tpa";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

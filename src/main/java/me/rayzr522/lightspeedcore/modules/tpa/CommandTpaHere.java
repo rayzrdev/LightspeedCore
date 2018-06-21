@@ -22,11 +22,6 @@ public class CommandTpaHere extends ModuleCommand<TpaModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "tpahere";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

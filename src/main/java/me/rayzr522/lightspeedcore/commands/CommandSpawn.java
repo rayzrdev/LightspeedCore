@@ -16,11 +16,6 @@ public class CommandSpawn implements ICommandHandler {
     }
 
     @Override
-    public String getPermission() {
-        return "spawn";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

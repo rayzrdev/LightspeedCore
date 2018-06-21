@@ -24,11 +24,6 @@ public class CommandDM extends ModuleCommand<DMModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "dm";
-    }
-
-    @Override
     public List<CommandTarget> getTargets() {
         return CommandTarget.PLAYER.only();
     }

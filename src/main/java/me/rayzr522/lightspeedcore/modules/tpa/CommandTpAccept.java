@@ -24,11 +24,6 @@ public class CommandTpAccept extends ModuleCommand<TpaModule> {
     }
 
     @Override
-    public String getPermission() {
-        return "tpaccept";
-    }
-
-    @Override
     public List<String> getAliases() {
         return Collections.singletonList("tpyes");
     }
