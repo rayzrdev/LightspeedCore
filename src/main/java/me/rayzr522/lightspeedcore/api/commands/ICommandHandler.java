@@ -33,9 +33,9 @@ public interface ICommandHandler {
     }
 
     /**
-     * @return The permission required to use this command (or null)
+     * @return The permission required to use this command (or null), defaults to the command name.
      */
-    String getPermission();
+    default String getPermission() { return getCommandName(); }
 
     /**
      * @return The applicable targets that can use this command (e.g. console or player)

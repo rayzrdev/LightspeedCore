@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class CommandContext {
@@ -128,12 +129,16 @@ public class CommandContext {
      *
      * @return The shifted argument, or <code>null</code> if there are no arguments left.
      */
-    private String shift() {
+    public String shift() {
         if (currentArg == args.size()) {
             return null;
         }
 
         return args.get(currentArg++);
+    }
+
+    public <T> T shift(Function<String, T> mapper) {
+        return mapper.apply(shift());
     }
 
     /**
@@ -143,9 +148,7 @@ public class CommandContext {
      * @throws NoSuchPlayerException If the player could not be found.
      */
     public Player shiftPlayer() {
-        String name = shift();
-
-        return Utils.findPlayer(name)
-                .orElseThrow(() -> new NoSuchPlayerException(name));
+        return shift(name -> Utils.findPlayer(name)
+                .orElseThrow(() -> new NoSuchPlayerException(name)));
     }
 }

@@ -1,4 +1,4 @@
-package me.rayzr522.lightspeedcore.commands;
+package me.rayzr522.lightspeedcore.commands.moderation;
 
 
 import me.rayzr522.lightspeedcore.api.commands.CommandContext;

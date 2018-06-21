@@ -62,3 +62,7 @@ command:
     switched: "Changed sort mode from &c%s&b to &c%s&b."
     invalid-mode: "&c'%s&c' is not a valid mode."
     already-using: "&cYou're already using %s&c as your sort method."
+  gamemode:
+    usage: "<mode>"
+    invalid-gamemode: "&c'%s&c' is not a valid gamemode."
+    set: "Gamemode set to &c%s&b."
