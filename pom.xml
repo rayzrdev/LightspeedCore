@@ -7,6 +7,7 @@
     <groupId>me.rayzr522</groupId>
     <artifactId>lightspeedcore</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <name>LightspeedCore</name>
     <description>A core plugin for my WIP server, LightspeedMC (name prone to change)</description>
 
     <repositories>

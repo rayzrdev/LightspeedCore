@@ -5,6 +5,13 @@ import me.rayzr522.lightspeedcore.api.commands.ICommandHandler;
 import me.rayzr522.lightspeedcore.api.modules.IModule;
 import me.rayzr522.lightspeedcore.api.storage.IStorageProvider;
 import me.rayzr522.lightspeedcore.api.storage.impl.YamlStorageProvider;
+import me.rayzr522.lightspeedcore.commands.CommandAdminChat;
+import me.rayzr522.lightspeedcore.commands.CommandKick;
+import me.rayzr522.lightspeedcore.commands.CommandSpawn;
+import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
+import me.rayzr522.lightspeedcore.modules.dm.DMModule;
+import me.rayzr522.lightspeedcore.modules.pvptoggle.PVPToggleModule;
+import me.rayzr522.lightspeedcore.modules.tpa.TpaModule;
 import me.rayzr522.lightspeedcore.utils.MessageHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -71,11 +78,16 @@ public class LightspeedCore extends JavaPlugin {
     }
 
     private void registerModules() {
-
+        registerModule(new TpaModule());
+        registerModule(new DMModule());
+        registerModule(new PVPToggleModule());
+        registerModule(new ChestSorterModule());
     }
 
     private void registerCommands() {
-
+        registerCommand(new CommandAdminChat());
+        registerCommand(new CommandSpawn());
+        registerCommand(new CommandKick());
     }
 
     @Override

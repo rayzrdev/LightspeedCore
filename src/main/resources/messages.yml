@@ -1,0 +1,64 @@
+prefix: "&8\u00bb&6 "
+no-permission: "&cYou need the permission '%s' to do that!"
+
+constants:
+  prefix: ""
+  enabled: "&aenabled"
+  disabled: "&cdisabled"
+
+module:
+  chestsorter:
+    sorted: "Chest sorted."
+    mode:
+      id: "ID"
+      name: "name"
+
+command:
+  fail:
+    prefix-addon: "&c"
+    generic: "%s"
+    only-players: "Only players can use this command!"
+    no-player: "The player '%s' does not exist!"
+    not-number: "That is not a valid number!"
+    invalid-usage: "Usage: &7/%s &e%s"
+  adminchat:
+    usage: "<message>"
+    message-format: "&8[&cADMIN &8| &6%s&8] &e%s"
+  dm:
+    usage: "<player> <message>"
+    message-format: "&8[&6%s &c-> &6%s&8] &e%s"
+    self: "you"
+  reply:
+    usage: "<message>"
+    no-conversation: "&cYou are not currently in a conversation."
+  kick:
+    usage: "<player>"
+    success: "Kicked &c%s"
+  tpa:
+    usage: "<player>"
+    expired: "&cTeleport request expired."
+    denied: "&cYour teleport request was denied."
+    requested: "Requested to teleport to &c%s&6."
+    target-notification: "&c%s&6 requested to teleport to you. Do &c/tpaccept&6 to accept, &c/tpdeny&6 to cancel. This request will expire in &c2&6 minutes."
+    success:
+      to: "Teleporting you to &c%s&6..."
+      here: "Teleporting &c%s&6 to you..."
+  tpahere:
+    usage: "<player>"
+    requested: "Requested that &c%s&6 teleport to you."
+    target-notification: "&c%s&6 requested that you teleport to them. Do &c/tpaccept&6 to accept, &c/tpdeny&6 to cancel. This request will expire in &c2&6 minutes."
+    success-requester: "Teleporting &c%s&6 to you..."
+  tpaccept:
+    usage: ""
+    no-request: "&cYou have no pending requests to accept."
+  tpdeny:
+    usage: ""
+    no-request: "&cYou have no pending requests to deny."
+  pvptoggle:
+    usage: ""
+    toggled: "PVP is now &e%s&6 for you."
+  sortmode:
+    usage: "[mode]"
+    switched: "Changed sort mode from &c%s&6 to &c%s&6."
+    invalid-mode: "&c'%s&c' is not a valid mode."
+    already-using: "&cYou're already using %s&c as your sort method."
