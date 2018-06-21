@@ -6,7 +6,10 @@ This is a comprehensive and modular core plugin based on [SurvivalCore](https://
 
 ## Modules
 
-- [ ] TPA
+- [x] TPA
+- [x] DMs (/msg)
+- [x] Chest sorter
+- [x] PVP toggle
 - [ ] Chat announcements
 - [ ] Scoreboard
 - [ ] Events
@@ -15,7 +18,7 @@ This is a comprehensive and modular core plugin based on [SurvivalCore](https://
 
 ## Installation
 
-Run the following commands to compile LightspeedScore
+Run the following commands to compile LightspeedCore:
 
 ```
 git clone https://github.com/RayzrDev/LightspeedCore.git
