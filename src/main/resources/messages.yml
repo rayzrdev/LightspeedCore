@@ -1,4 +1,4 @@
-prefix: "&8\u00bb&6 "
+prefix: "&8\u00bb&b "
 no-permission: "&cYou need the permission '%s' to do that!"
 
 constants:
@@ -23,10 +23,10 @@ command:
     invalid-usage: "Usage: &7/%s &e%s"
   adminchat:
     usage: "<message>"
-    message-format: "&8[&cADMIN &8| &6%s&8] &e%s"
+    message-format: "&8[&cADMIN&8] &8[&b%s&8] &e%s"
   dm:
     usage: "<player> <message>"
-    message-format: "&8[&6%s &c-> &6%s&8] &e%s"
+    message-format: "&8[&b%s &c-> &b%s&8] &e%s"
     self: "you"
   reply:
     usage: "<message>"
@@ -38,16 +38,16 @@ command:
     usage: "<player>"
     expired: "&cTeleport request expired."
     denied: "&cYour teleport request was denied."
-    requested: "Requested to teleport to &c%s&6."
-    target-notification: "&c%s&6 requested to teleport to you. Do &c/tpaccept&6 to accept, &c/tpdeny&6 to cancel. This request will expire in &c2&6 minutes."
+    requested: "Requested to teleport to &c%s&b."
+    target-notification: "&c%s&b requested to teleport to you. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
     success:
-      to: "Teleporting you to &c%s&6..."
-      here: "Teleporting &c%s&6 to you..."
+      to: "Teleporting you to &c%s&b..."
+      here: "Teleporting &c%s&b to you..."
   tpahere:
     usage: "<player>"
-    requested: "Requested that &c%s&6 teleport to you."
-    target-notification: "&c%s&6 requested that you teleport to them. Do &c/tpaccept&6 to accept, &c/tpdeny&6 to cancel. This request will expire in &c2&6 minutes."
-    success-requester: "Teleporting &c%s&6 to you..."
+    requested: "Requested that &c%s&b teleport to you."
+    target-notification: "&c%s&b requested that you teleport to them. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
+    success-requester: "Teleporting &c%s&b to you..."
   tpaccept:
     usage: ""
     no-request: "&cYou have no pending requests to accept."
@@ -56,9 +56,9 @@ command:
     no-request: "&cYou have no pending requests to deny."
   pvptoggle:
     usage: ""
-    toggled: "PVP is now &e%s&6 for you."
+    toggled: "PVP is now &e%s&b for you."
   sortmode:
     usage: "[mode]"
-    switched: "Changed sort mode from &c%s&6 to &c%s&6."
+    switched: "Changed sort mode from &c%s&b to &c%s&b."
     invalid-mode: "&c'%s&c' is not a valid mode."
     already-using: "&cYou're already using %s&c as your sort method."
