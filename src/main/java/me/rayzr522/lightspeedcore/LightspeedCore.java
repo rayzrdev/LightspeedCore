@@ -79,7 +79,7 @@ public class LightspeedCore extends JavaPlugin {
     }
 
     private void registerModules() {
-        registerModule(new TpaModule());
+//        registerModule(new TpaModule());
         registerModule(new DMModule());
         registerModule(new PVPToggleModule());
         registerModule(new ChestSorterModule());
