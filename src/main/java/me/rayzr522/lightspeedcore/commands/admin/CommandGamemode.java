@@ -5,6 +5,7 @@ import me.rayzr522.lightspeedcore.api.commands.CommandResult;
 import me.rayzr522.lightspeedcore.api.commands.CommandTarget;
 import me.rayzr522.lightspeedcore.api.commands.ICommandHandler;
 import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
 
 import javax.swing.text.html.Option;
 import java.util.Collections;
@@ -42,8 +43,20 @@ public class CommandGamemode implements ICommandHandler {
             return CommandResult.FAIL;
         }
 
-        ctx.getPlayer().setGameMode(gameMode);
-        ctx.tell("command.gamemode.set", gameMode.name().toLowerCase());
+        Player target = ctx.getPlayer();
+        if (ctx.hasArgs(2)) {
+            if (!getPlugin().checkPermission(ctx.getPlayer(), "gamemode.others", true)) {
+                return CommandResult.FAIL;
+            }
+            target = ctx.shiftPlayer();
+        }
+
+        target.setGameMode(gameMode);
+        if (!target.getUniqueId().equals(ctx.getPlayer().getUniqueId())) {
+            ctx.tell("command.gamemode.set-other", gameMode.name().toLowerCase(), target.getName());
+        } else {
+            ctx.tell("command.gamemode.set", gameMode.name().toLowerCase());
+        }
 
         return CommandResult.SUCCESS;
     }

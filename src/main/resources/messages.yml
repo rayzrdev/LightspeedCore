@@ -63,6 +63,7 @@ command:
     invalid-mode: "&c'%s&c' is not a valid mode."
     already-using: "&cYou're already using %s&c as your sort method."
   gamemode:
-    usage: "<mode>"
+    usage: "<mode> [player]"
     invalid-gamemode: "&c'%s&c' is not a valid gamemode."
     set: "Gamemode set to &c%s&b."
+    set-other: "Gamemode set to &c%s&b for &c%s&b."
