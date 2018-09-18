@@ -67,3 +67,12 @@ command:
     invalid-gamemode: "&c'%s&c' is not a valid gamemode."
     set: "Gamemode set to &c%s&b."
     set-other: "Gamemode set to &c%s&b for &c%s&b."
+  speed:
+    usage: "[walk|fly] [speed]"
+    type:
+      walk: "Walk"
+      fly: "Fly"
+    invalid-type: "&cSpeed type must be either &cwalk&b or &cfly&b!"
+    invalid-speed: "&cSpeed must be between 1 and 10!"
+    speed-set: "&c%s&b speed set to &c%d&b."
+    speed-reset: "&c&s&b speed reset."

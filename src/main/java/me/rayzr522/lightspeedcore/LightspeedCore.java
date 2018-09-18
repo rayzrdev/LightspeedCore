@@ -7,6 +7,7 @@ import me.rayzr522.lightspeedcore.api.storage.IStorageProvider;
 import me.rayzr522.lightspeedcore.api.storage.impl.YamlStorageProvider;
 import me.rayzr522.lightspeedcore.commands.CommandAdminChat;
 import me.rayzr522.lightspeedcore.commands.admin.CommandGamemode;
+import me.rayzr522.lightspeedcore.commands.admin.CommandSpeed;
 import me.rayzr522.lightspeedcore.commands.moderation.CommandKick;
 import me.rayzr522.lightspeedcore.commands.CommandSpawn;
 import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
@@ -90,6 +91,7 @@ public class LightspeedCore extends JavaPlugin {
         registerCommand(new CommandSpawn());
         registerCommand(new CommandKick());
         registerCommand(new CommandGamemode());
+        registerCommand(new CommandSpeed());
     }
 
     @Override
