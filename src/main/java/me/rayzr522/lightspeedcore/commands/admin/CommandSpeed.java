@@ -25,12 +25,13 @@ public class CommandSpeed implements ICommandHandler {
     @Override
     public CommandResult onCommand(CommandContext ctx) {
         SpeedType type = ctx.getPlayer().isFlying() ? SpeedType.FLYING : SpeedType.WALKING;
-        int speed = 1;
 
         if (ctx.hasArgs(2)) {
             type = matchType(ctx.shift())
                     .orElseThrow(ctx.fail("command.speed.invalid-type"));
         }
+
+        int speed = type.getDefaultSpeed();
 
         if (ctx.hasArgs()) {
             speed = ctx.shift(Integer::parseInt);
@@ -44,7 +45,7 @@ public class CommandSpeed implements ICommandHandler {
         type.apply(ctx.getPlayer(), speed / 10.0f);
 
         String typeName = getPlugin().trRaw(String.format("command.speed.type.%s", type.name().toLowerCase()));
-        if (speed == 1) {
+        if (speed == type.getDefaultSpeed()) {
             ctx.tell("command.speed.speed-reset", typeName);
         } else {
             ctx.tell("command.speed.speed-set", typeName, speed);
@@ -70,17 +71,23 @@ public class CommandSpeed implements ICommandHandler {
     }
 
     enum SpeedType {
-        WALKING(Player::setWalkSpeed),
-        FLYING(Player::setFlySpeed);
+        WALKING(Player::setWalkSpeed, 2),
+        FLYING(Player::setFlySpeed, 1);
 
         private final BiConsumer<Player, Float> applierFunction;
+        private final int defaultSpeed;
 
-        SpeedType(BiConsumer<Player, Float> applierFunction) {
+        SpeedType(BiConsumer<Player, Float> applierFunction, int defaultSpeed) {
             this.applierFunction = applierFunction;
+            this.defaultSpeed = defaultSpeed;
         }
 
         public void apply(Player player, float speed) {
             applierFunction.accept(player, speed);
+        }
+
+        public int getDefaultSpeed() {
+            return defaultSpeed;
         }
     }
 }
