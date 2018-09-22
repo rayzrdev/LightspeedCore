@@ -15,6 +15,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>rayzr-repo</id>
+            <url>https://cdn.rawgit.com/Rayzr522/maven-repo/master</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -22,6 +26,11 @@
             <artifactId>bukkit</artifactId>
             <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.rayzr522</groupId>
+            <artifactId>jsonmessage</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 
@@ -43,6 +52,29 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.0</version>
+
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                    <relocations>
+                        <relocation>
+                            <pattern>me.rayzr522.jsonmessage.</pattern>
+                            <shadedPattern>me.rayzr522.lightspeedcore.lib.jsonmessage.</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

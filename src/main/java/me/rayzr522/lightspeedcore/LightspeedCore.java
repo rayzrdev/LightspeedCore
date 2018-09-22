@@ -10,6 +10,7 @@ import me.rayzr522.lightspeedcore.commands.admin.CommandGamemode;
 import me.rayzr522.lightspeedcore.commands.admin.CommandSpeed;
 import me.rayzr522.lightspeedcore.commands.moderation.CommandKick;
 import me.rayzr522.lightspeedcore.commands.CommandSpawn;
+import me.rayzr522.lightspeedcore.modules.chat.ChatModule;
 import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
 import me.rayzr522.lightspeedcore.modules.dm.DMModule;
 import me.rayzr522.lightspeedcore.modules.pvptoggle.PVPToggleModule;
@@ -84,6 +85,7 @@ public class LightspeedCore extends JavaPlugin {
         registerModule(new DMModule());
         registerModule(new PVPToggleModule());
         registerModule(new ChestSorterModule());
+        registerModule(new ChatModule());
     }
 
     private void registerCommands() {
