@@ -6,19 +6,20 @@ import me.rayzr522.lightspeedcore.api.modules.IModule;
 import me.rayzr522.lightspeedcore.api.storage.IStorageProvider;
 import me.rayzr522.lightspeedcore.api.storage.impl.YamlStorageProvider;
 import me.rayzr522.lightspeedcore.commands.CommandAdminChat;
+import me.rayzr522.lightspeedcore.commands.CommandSpawn;
 import me.rayzr522.lightspeedcore.commands.admin.CommandGamemode;
 import me.rayzr522.lightspeedcore.commands.admin.CommandSpeed;
 import me.rayzr522.lightspeedcore.commands.moderation.CommandKick;
-import me.rayzr522.lightspeedcore.commands.CommandSpawn;
 import me.rayzr522.lightspeedcore.modules.chat.ChatModule;
 import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
 import me.rayzr522.lightspeedcore.modules.dm.DMModule;
 import me.rayzr522.lightspeedcore.modules.pvptoggle.PVPToggleModule;
-import me.rayzr522.lightspeedcore.modules.tpa.TpaModule;
 import me.rayzr522.lightspeedcore.utils.MessageHandler;
+import net.milkbowl.vault.chat.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -39,6 +40,8 @@ public class LightspeedCore extends JavaPlugin {
     private IStorageProvider storageProvider;
     private IStorageProvider playerData;
 
+    private Chat vaultChat;
+
     public static LightspeedCore getInstance() {
         return instance;
     }
@@ -46,6 +49,10 @@ public class LightspeedCore extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+
+        vaultChat = Optional.of(getServer().getServicesManager().getRegistration(Chat.class))
+                .map(RegisteredServiceProvider::getProvider)
+                .orElse(null);
 
         settings = new YamlStorageProvider(getFile("settings.yml"));
         settings.load(this);
@@ -265,5 +272,9 @@ public class LightspeedCore extends JavaPlugin {
      */
     public MessageHandler getMessages() {
         return messages;
+    }
+
+    public Optional<Chat> getVaultChat() {
+        return Optional.of(vaultChat);
     }
 }

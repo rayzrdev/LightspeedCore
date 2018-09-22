@@ -30,13 +30,40 @@ public class ChatModule extends AbstractModule implements Listener {
         Player player = e.getPlayer();
 
         JSONMessage.create(" ")
-                .then(player.getDisplayName())
+                .then(String.format(
+                        "%s%s%s",
+                        getPrefixFor(player),
+                        player.getDisplayName(),
+                        getSuffixFor(player)
+                ))
                 .suggestCommand(String.format("/msg %s ", player.getName()))
-                .then(" \u00bb ")
+                .tooltip(
+                        JSONMessage.create("Click to message this player")
+                                .color(ChatColor.GRAY)
+                                .style(ChatColor.ITALIC)
+                )
+                .then("\u00bb")
                 .color(ChatColor.DARK_GRAY)
                 .then(" ")
                 .then(e.getMessage())
+                .color(ChatColor.YELLOW)
                 .send(Bukkit.getOnlinePlayers().toArray(new Player[0]));
+    }
+
+    public String getPrefixFor(Player player) {
+        return getPlugin().getVaultChat()
+                .map(chat -> chat.getPlayerPrefix(player))
+                .map(prefix -> ChatColor.translateAlternateColorCodes('&', prefix))
+                .map(prefix -> String.format("%s ", prefix))
+                .orElse("");
+    }
+
+    public String getSuffixFor(Player player) {
+        return getPlugin().getVaultChat()
+                .map(chat -> chat.getPlayerSuffix(player))
+                .map(prefix -> ChatColor.translateAlternateColorCodes('&', prefix))
+                .map(prefix -> String.format(" %s", prefix))
+                .orElse("");
     }
 
     @Override
