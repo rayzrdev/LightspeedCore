@@ -22,6 +22,8 @@
 # Multiple build folders with Maven sub-modules
 **/target/
 /out/
+# Maven junk:
+dependency-reduced-pom.xml
 
 # =========================
 # IDE settings files
