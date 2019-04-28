@@ -1,4 +1,4 @@
-package me.rayzr522.lightspeedcore.commands;
+package me.rayzr522.lightspeedcore.commands.fun;
 
 import me.rayzr522.lightspeedcore.api.commands.CommandContext;
 import me.rayzr522.lightspeedcore.api.commands.CommandResult;

@@ -6,10 +6,12 @@ import me.rayzr522.lightspeedcore.api.modules.IModule;
 import me.rayzr522.lightspeedcore.api.storage.IStorageProvider;
 import me.rayzr522.lightspeedcore.api.storage.impl.YamlStorageProvider;
 import me.rayzr522.lightspeedcore.commands.CommandAdminChat;
-import me.rayzr522.lightspeedcore.commands.CommandShrug;
 import me.rayzr522.lightspeedcore.commands.CommandSpawn;
 import me.rayzr522.lightspeedcore.commands.admin.CommandGamemode;
 import me.rayzr522.lightspeedcore.commands.admin.CommandSpeed;
+import me.rayzr522.lightspeedcore.commands.fun.CommandShrug;
+import me.rayzr522.lightspeedcore.commands.moderation.CommandFeed;
+import me.rayzr522.lightspeedcore.commands.moderation.CommandHeal;
 import me.rayzr522.lightspeedcore.commands.moderation.CommandKick;
 import me.rayzr522.lightspeedcore.modules.chat.ChatModule;
 import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
@@ -97,12 +99,20 @@ public class LightspeedCore extends JavaPlugin {
     }
 
     private void registerCommands() {
+        // Admin
         registerCommand(new CommandAdminChat());
-        registerCommand(new CommandSpawn());
-        registerCommand(new CommandKick());
         registerCommand(new CommandGamemode());
         registerCommand(new CommandSpeed());
+
+        registerCommand(new CommandSpawn());
+
+        // Fun
         registerCommand(new CommandShrug());
+
+        // Moderation
+        registerCommand(new CommandKick());
+        registerCommand(new CommandHeal());
+        registerCommand(new CommandFeed());
     }
 
     @Override

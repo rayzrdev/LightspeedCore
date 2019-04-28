@@ -2,77 +2,87 @@ prefix: "&8\u00bb&b "
 no-permission: "&cYou need the permission '%s' to do that!"
 
 constants:
-  prefix: ""
-  enabled: "&aenabled"
-  disabled: "&cdisabled"
+    prefix: ""
+    enabled: "&aenabled"
+    disabled: "&cdisabled"
 
 module:
-  chestsorter:
-    sorted: "Chest sorted."
-    mode:
-      id: "ID"
-      name: "name"
+    chestsorter:
+        sorted: "Chest sorted."
+        mode:
+            id: "ID"
+            name: "name"
 
 command:
-  fail:
-    prefix-addon: "&c"
-    generic: "%s"
-    only-players: "Only players can use this command!"
-    no-player: "The player '%s' does not exist!"
-    not-number: "That is not a valid number!"
-    invalid-usage: "Usage: &7/%s &e%s"
-  adminchat:
-    usage: "<message>"
-    message-format: "&8[&cADMIN&8] &8[&b%s&8] &e%s"
-  dm:
-    usage: "<player> <message>"
-    message-format: "&8[&b%s &c-> &b%s&8] &e%s"
-    self: "you"
-  reply:
-    usage: "<message>"
-    no-conversation: "&cYou are not currently in a conversation."
-  kick:
-    usage: "<player>"
-    success: "Kicked &c%s"
-  tpa:
-    usage: "<player>"
-    expired: "&cTeleport request expired."
-    denied: "&cYour teleport request was denied."
-    requested: "Requested to teleport to &c%s&b."
-    target-notification: "&c%s&b requested to teleport to you. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
-    success:
-      to: "Teleporting you to &c%s&b..."
-      here: "Teleporting &c%s&b to you..."
-  tpahere:
-    usage: "<player>"
-    requested: "Requested that &c%s&b teleport to you."
-    target-notification: "&c%s&b requested that you teleport to them. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
-    success-requester: "Teleporting &c%s&b to you..."
-  tpaccept:
-    usage: ""
-    no-request: "&cYou have no pending requests to accept."
-  tpdeny:
-    usage: ""
-    no-request: "&cYou have no pending requests to deny."
-  pvptoggle:
-    usage: ""
-    toggled: "PVP is now &e%s&b for you."
-  sortmode:
-    usage: "[mode]"
-    switched: "Changed sort mode from &c%s&b to &c%s&b."
-    invalid-mode: "&c'%s&c' is not a valid mode."
-    already-using: "&cYou're already using %s&c as your sort method."
-  gamemode:
-    usage: "<mode> [player]"
-    invalid-gamemode: "&c'%s&c' is not a valid gamemode."
-    set: "Gamemode set to &c%s&b."
-    set-other: "Gamemode set to &c%s&b for &c%s&b."
-  speed:
-    usage: "[walk|fly] [speed]"
-    type:
-      walking: "Walk"
-      flying: "Fly"
-    invalid-type: "&cSpeed type must be either &cwalk&b or &cfly&b!"
-    invalid-speed: "&cSpeed must be between 1 and 10!"
-    speed-set: "&c%s&b speed set to &c%d&b."
-    speed-reset: "&c%s&b speed reset."
+    fail:
+        prefix-addon: "&c"
+        generic: "%s"
+        only-players: "Only players can use this command!"
+        no-player: "The player '%s' does not exist!"
+        not-number: "That is not a valid number!"
+        invalid-usage: "Usage: &7/%s &e%s"
+    adminchat:
+        usage: "<message>"
+        message-format: "&8[&cADMIN&8] &8[&b%s&8] &e%s"
+    dm:
+        usage: "<player> <message>"
+        message-format: "&8[&b%s &c-> &b%s&8] &e%s"
+        self: "you"
+    reply:
+        usage: "<message>"
+        no-conversation: "&cYou are not currently in a conversation."
+    kick:
+        usage: "<player>"
+        success: "Kicked &c%s"
+    tpa:
+        usage: "<player>"
+        expired: "&cTeleport request expired."
+        denied: "&cYour teleport request was denied."
+        requested: "Requested to teleport to &c%s&b."
+        target-notification: "&c%s&b requested to teleport to you. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
+        success:
+            to: "Teleporting you to &c%s&b..."
+            here: "Teleporting &c%s&b to you..."
+    tpahere:
+        usage: "<player>"
+        requested: "Requested that &c%s&b teleport to you."
+        target-notification: "&c%s&b requested that you teleport to them. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
+        success-requester: "Teleporting &c%s&b to you..."
+    tpaccept:
+        usage: ""
+        no-request: "&cYou have no pending requests to accept."
+    tpdeny:
+        usage: ""
+        no-request: "&cYou have no pending requests to deny."
+    pvptoggle:
+        usage: ""
+        toggled: "PVP is now &e%s&b for you."
+    sortmode:
+        usage: "[mode]"
+        switched: "Changed sort mode from &c%s&b to &c%s&b."
+        invalid-mode: "&c'%s&c' is not a valid mode."
+        already-using: "&cYou're already using %s&c as your sort method."
+    gamemode:
+        usage: "<mode> [player]"
+        invalid-gamemode: "&c'%s&c' is not a valid gamemode."
+        set: "Gamemode set to &c%s&b."
+        set-other: "Gamemode set to &c%s&b for &c%s&b."
+    speed:
+        usage: "[walk|fly] [speed]"
+        type:
+            walking: "Walk"
+            flying: "Fly"
+        invalid-type: "&cSpeed type must be either &cwalk&b or &cfly&b!"
+        invalid-speed: "&cSpeed must be between 1 and 10!"
+        speed-set: "&c%s&b speed set to &c%d&b."
+        speed-reset: "&c%s&b speed reset."
+    shrug:
+        usage: ""
+    heal:
+        usage: "[user]"
+        success: "You have been healed!"
+        other: "&c%s&b has been healed!"
+    feed:
+        usage: "[user]"
+        success: "You have been fed!"
+        other: "&c%s&b has been fed!"
