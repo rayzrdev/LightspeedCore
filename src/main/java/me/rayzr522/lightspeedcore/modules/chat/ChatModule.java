@@ -8,9 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChatEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.util.Collections;
 import java.util.List;
@@ -23,8 +22,8 @@ public class ChatModule extends AbstractModule implements Listener {
         getPlugin().getServer().getPluginManager().registerEvents(this, getPlugin());
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onChat(PlayerChatEvent e) {
+    @EventHandler
+    public void onChat(AsyncPlayerChatEvent e) {
         e.setCancelled(true);
 
         Player player = e.getPlayer();

@@ -6,6 +6,7 @@ import me.rayzr522.lightspeedcore.api.modules.IModule;
 import me.rayzr522.lightspeedcore.api.storage.IStorageProvider;
 import me.rayzr522.lightspeedcore.api.storage.impl.YamlStorageProvider;
 import me.rayzr522.lightspeedcore.commands.CommandAdminChat;
+import me.rayzr522.lightspeedcore.commands.CommandShrug;
 import me.rayzr522.lightspeedcore.commands.CommandSpawn;
 import me.rayzr522.lightspeedcore.commands.admin.CommandGamemode;
 import me.rayzr522.lightspeedcore.commands.admin.CommandSpeed;
@@ -101,6 +102,7 @@ public class LightspeedCore extends JavaPlugin {
         registerCommand(new CommandKick());
         registerCommand(new CommandGamemode());
         registerCommand(new CommandSpeed());
+        registerCommand(new CommandShrug());
     }
 
     @Override
