@@ -3,3 +3,4 @@ main: me.rayzr522.lightspeedcore.LightspeedCore
 version: ${project.version}
 description: ${project.description}
 softdepend: [DiscordSRV]
+api-version: 1.14
