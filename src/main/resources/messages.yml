@@ -86,3 +86,7 @@ command:
         usage: "[user]"
         success: "You have been fed!"
         other: "&c%s&b has been fed!"
+    deathlog:
+        usage: ""
+        entry: "&c%tR &8- &e%d, %d, %d (%s)"
+        none: "&cYou have not died recently!"

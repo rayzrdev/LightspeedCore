@@ -15,6 +15,7 @@ import me.rayzr522.lightspeedcore.commands.moderation.CommandHeal;
 import me.rayzr522.lightspeedcore.commands.moderation.CommandKick;
 import me.rayzr522.lightspeedcore.modules.chat.ChatModule;
 import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
+import me.rayzr522.lightspeedcore.modules.deathlog.DeathLogModule;
 import me.rayzr522.lightspeedcore.modules.dm.DMModule;
 import me.rayzr522.lightspeedcore.modules.pvptoggle.PVPToggleModule;
 import me.rayzr522.lightspeedcore.utils.MessageHandler;
@@ -96,6 +97,7 @@ public class LightspeedCore extends JavaPlugin {
         registerModule(new PVPToggleModule());
         registerModule(new ChestSorterModule());
         registerModule(new ChatModule());
+        registerModule(new DeathLogModule());
     }
 
     private void registerCommands() {

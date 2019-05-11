@@ -54,7 +54,7 @@ public class PVPToggleModule extends AbstractModule implements Listener {
         if (!(e.getEntity() instanceof Player) || !(e.getDamager() instanceof Player)) {
             return;
         }
-        
+
         Player player = (Player) e.getEntity();
         Player damager = (Player) e.getDamager();
 
