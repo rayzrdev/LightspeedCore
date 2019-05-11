@@ -82,8 +82,11 @@ public class CommandRegister {
         PluginCommand command = createCommand(commandHandler.getCommandName());
 
         assert command != null;
+
         command.setExecutor(new InternalCommandExecutor(commandHandler));
         command.setAliases(commandHandler.getAliases());
+        command.setDescription(commandHandler.getDescription());
+        command.setUsage(String.format("%s %s", commandHandler.getCommandName(), plugin.trRaw(String.format("command.%s.usage", commandHandler.getCommandName()))));
 
         if (commandMap.register(commandHandler.getCommandName(), plugin.getName(), command)) {
             registeredCommands.add(command);

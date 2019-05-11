@@ -23,19 +23,24 @@ command:
         invalid-usage: "Usage: &7/%s &e%s"
     adminchat:
         usage: "<message>"
+        description: "Sends a message in an admin-only chat."
         message-format: "&8[&cADMIN&8] &8[&b%s&8] &e%s"
     dm:
         usage: "<player> <message>"
+        description: "Directly messages a user."
         message-format: "&8[&b%s &c-> &b%s&8] &e%s"
         self: "you"
     reply:
         usage: "<message>"
+        description: "Replies to your most recent DM."
         no-conversation: "&cYou are not currently in a conversation."
     kick:
         usage: "<player>"
+        description: "Kicks a player."
         success: "Kicked &c%s"
     tpa:
         usage: "<player>"
+        description: "Requests to teleport to a player's location."
         expired: "&cTeleport request expired."
         denied: "&cYour teleport request was denied."
         requested: "Requested to teleport to &c%s&b."
@@ -45,30 +50,37 @@ command:
             here: "Teleporting &c%s&b to you..."
     tpahere:
         usage: "<player>"
+        description: "Requests that a player teleports to your location."
         requested: "Requested that &c%s&b teleport to you."
         target-notification: "&c%s&b requested that you teleport to them. Do &c/tpaccept&b to accept, &c/tpdeny&b to cancel. This request will expire in &c2&b minutes."
         success-requester: "Teleporting &c%s&b to you..."
     tpaccept:
         usage: ""
+        description: "Accepts a teleport request."
         no-request: "&cYou have no pending requests to accept."
     tpdeny:
         usage: ""
+        description: "Denies a teleport request."
         no-request: "&cYou have no pending requests to deny."
     pvptoggle:
         usage: ""
+        description: "Toggles PVP on or off."
         toggled: "PVP is now &e%s&b for you."
     sortmode:
         usage: "[mode]"
+        description: "Changes your chest sorting mode."
         switched: "Changed sort mode from &c%s&b to &c%s&b."
         invalid-mode: "&c'%s&c' is not a valid mode."
         already-using: "&cYou're already using %s&c as your sort method."
     gamemode:
         usage: "<mode> [player]"
+        description: "Changes your gamemode."
         invalid-gamemode: "&c'%s&c' is not a valid gamemode."
         set: "Gamemode set to &c%s&b."
         set-other: "Gamemode set to &c%s&b for &c%s&b."
     speed:
         usage: "[walk|fly] [speed]"
+        description: "Changes your movement speed."
         type:
             walking: "Walk"
             flying: "Fly"
@@ -77,16 +89,20 @@ command:
         speed-set: "&c%s&b speed set to &c%d&b."
         speed-reset: "&c%s&b speed reset."
     shrug:
-        usage: ""
+        usage: "[message]"
+        description: "Appends the shrug text emoji to your message."
     heal:
         usage: "[user]"
+        description: "Restores all your health."
         success: "You have been healed!"
         other: "&c%s&b has been healed!"
     feed:
         usage: "[user]"
+        description: "Restores all your food."
         success: "You have been fed!"
         other: "&c%s&b has been fed!"
     deathlog:
         usage: ""
+        description: "Shows you a log of your recent deaths."
         entry: "&c%tR &8- &e%d, %d, %d (%s)"
         none: "&cYou have not died recently!"

@@ -35,7 +35,16 @@ public interface ICommandHandler {
     /**
      * @return The permission required to use this command (or null), defaults to the command name.
      */
-    default String getPermission() { return getCommandName(); }
+    default String getPermission() {
+        return getCommandName();
+    }
+
+    /**
+     * @return The description for this command.
+     */
+    default String getDescription() {
+        return getPlugin().trRaw(String.format("command.%s.description", getCommandName()));
+    }
 
     /**
      * @return The applicable targets that can use this command (e.g. console or player)
