@@ -51,13 +51,15 @@ public class PVPToggleModule extends AbstractModule implements Listener {
 
     @EventHandler
     public void onPVP(EntityDamageByEntityEvent e) {
-        if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
-            Player player = (Player) e.getEntity();
-            Player damager = (Player) e.getDamager();
+        if (!(e.getEntity() instanceof Player) || !(e.getDamager() instanceof Player)) {
+            return;
+        }
+        
+        Player player = (Player) e.getEntity();
+        Player damager = (Player) e.getDamager();
 
-            if (getPlugin().checkPermission(player, "pvptoggle.use", false) && !isEnabled(player) || !isEnabled(damager)) {
-                e.setCancelled(true);
-            }
+        if (getPlugin().checkPermission(player, "pvptoggle.use", false) && (!isEnabled(player) || !isEnabled(damager))) {
+            e.setCancelled(true);
         }
     }
 }
