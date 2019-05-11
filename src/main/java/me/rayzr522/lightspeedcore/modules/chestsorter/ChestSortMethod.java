@@ -3,6 +3,7 @@ package me.rayzr522.lightspeedcore.modules.chestsorter;
 
 import me.rayzr522.lightspeedcore.utils.Utils;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Comparator;
@@ -10,15 +11,17 @@ import java.util.Optional;
 
 public enum ChestSortMethod implements Comparator<ItemStack> {
     ID((a, b) -> {
-        int idA = a.map(ItemStack::getTypeId).orElse(Integer.MAX_VALUE);
-        int idB = b.map(ItemStack::getTypeId).orElse(Integer.MAX_VALUE);
-        int idComparator = Integer.compare(idA, idB);
+        String idA = a.map(ItemStack::getType).map(Material::getKey).map(NamespacedKey::toString).orElse("");
+        String idB = b.map(ItemStack::getType).map(Material::getKey).map(NamespacedKey::toString).orElse("");
 
-        if (idComparator == 0) {
-            return Short.compare(a.map(ItemStack::getDurability).orElse(Short.MAX_VALUE), b.map(ItemStack::getDurability).orElse(Short.MAX_VALUE));
+        boolean emptyA = idA.isEmpty();
+        boolean emptyB = idB.isEmpty();
+
+        if (emptyA || emptyB) {
+            return Boolean.compare(emptyA, emptyB);
         }
 
-        return idComparator;
+        return idA.compareToIgnoreCase(idB);
     }),
     NAME((a, b) -> {
         String nameA = a.map(ItemStack::getType).map(Material::toString).orElse("");
