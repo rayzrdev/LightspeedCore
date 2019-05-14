@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class DeathLogModule extends AbstractModule implements Listener {
-    private Multimap<UUID, DeathLogEntry> deathLog = new HashMultimap<>();
+    private Multimap<UUID, DeathLogEntry> deathLog = HashMultimap.create();
     private CommandDeathLog commandDeathLog;
 
     @Override

@@ -38,6 +38,7 @@ command:
         usage: "<player>"
         description: "Kicks a player."
         success: "Kicked &c%s"
+        reason: "&cYou were kicked for: &e%s"
     tpa:
         usage: "<player>"
         description: "Requests to teleport to a player's location."

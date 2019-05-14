@@ -19,7 +19,13 @@ public class CommandKick implements ICommandHandler {
         }
 
         Player target = ctx.shiftPlayer();
-        target.kickPlayer("You were kicked!");
+
+        if (ctx.hasArgs()) {
+            target.kickPlayer(getPlugin().trRaw("command.kick.reason", ctx.remainder()));
+        } else {
+            target.kickPlayer(null);
+        }
+
         ctx.tell("command.kick.success", target.getName());
 
         return CommandResult.SUCCESS;
