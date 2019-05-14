@@ -72,6 +72,9 @@ public class LightspeedCore extends JavaPlugin {
         playerData.load(this);
         playerData.reload();
 
+        // Load config files & lang
+        reload();
+
         try {
             commandRegister.init();
         } catch (NoSuchFieldException | NoSuchMethodException | IllegalAccessException e) {
@@ -87,8 +90,6 @@ public class LightspeedCore extends JavaPlugin {
             module.onLoad(this);
             module.getCommands().forEach(this::registerCommand);
         });
-
-        reload();
     }
 
     private void registerModules() {
