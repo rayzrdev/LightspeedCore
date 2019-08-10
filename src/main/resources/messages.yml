@@ -107,3 +107,20 @@ command:
         description: "Shows you a log of your recent deaths."
         entry: "&c%tR &8- &e%d, %d, %d (%s)"
         none: "&cYou have not died recently!"
+    whois:
+        usage: "<player<"
+        description: "Shows you the last known information about an offline player."
+        missing-info: "&cNo data could be found about that player!"
+        format:
+            prefix: ""
+            info-online: |
+                &bName: &r%s
+                &bStatus: &aONLINE
+                &bLocation: &e%s @ %d,%d,%d
+                &bIP: &e%s
+            info-offline: |
+                &bName: &r%s
+                &bStatus: &cOFFLINE
+                &bLast Online: &e%tc
+                &bLocation: &e%s @ %d,%d,%d
+                &bIP: &e%s

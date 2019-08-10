@@ -38,9 +38,9 @@ public class CommandWhois extends ModuleCommand<WhoisModule> {
             Player onlinePlayer = target.getPlayer();
 
             ctx.tell(
-                    "command.whois.info-online",
+                    "command.whois.format.info-online",
                     onlinePlayer.getName(),
-                    onlinePlayer.getWorld(),
+                    onlinePlayer.getWorld().getName(),
                     onlinePlayer.getLocation().getBlockX(),
                     onlinePlayer.getLocation().getBlockY(),
                     onlinePlayer.getLocation().getBlockZ(),
@@ -51,10 +51,10 @@ public class CommandWhois extends ModuleCommand<WhoisModule> {
             String ip = getModule().getLastKnownIp(target.getUniqueId()).orElseThrow(ctx.fail("command.whois.missing-info"));
 
             ctx.tell(
-                    "command.whois.info-offline",
+                    "command.whois.format.info-offline",
                     target.getName(),
                     new Date(target.getLastPlayed()),
-                    location.getWorld(),
+                    location.getWorld().getName(),
                     location.getBlockX(),
                     location.getBlockY(),
                     location.getBlockZ(),
