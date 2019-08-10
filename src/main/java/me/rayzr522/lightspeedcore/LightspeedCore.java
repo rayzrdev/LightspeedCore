@@ -18,6 +18,7 @@ import me.rayzr522.lightspeedcore.modules.chestsorter.ChestSorterModule;
 import me.rayzr522.lightspeedcore.modules.deathlog.DeathLogModule;
 import me.rayzr522.lightspeedcore.modules.dm.DMModule;
 import me.rayzr522.lightspeedcore.modules.pvptoggle.PVPToggleModule;
+import me.rayzr522.lightspeedcore.modules.whois.WhoisModule;
 import me.rayzr522.lightspeedcore.utils.MessageHandler;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.Bukkit;
@@ -99,6 +100,7 @@ public class LightspeedCore extends JavaPlugin {
         registerModule(new ChestSorterModule());
         registerModule(new ChatModule());
         registerModule(new DeathLogModule());
+        registerModule(new WhoisModule());
     }
 
     private void registerCommands() {

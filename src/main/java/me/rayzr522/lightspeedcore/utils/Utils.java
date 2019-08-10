@@ -3,6 +3,7 @@ package me.rayzr522.lightspeedcore.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -41,6 +42,17 @@ public class Utils {
      */
     public static Optional<Player> getPlayer(UUID uuid) {
         return Optional.ofNullable(Bukkit.getPlayer(uuid));
+    }
+
+    /**
+     * Gets the offline player with the given name.
+     *
+     * @param name The name of the player to get.
+     * @return The offline player.
+     */
+    @SuppressWarnings("deprecated")
+    public static OfflinePlayer getOfflinePlayer(String name) {
+        return Bukkit.getOfflinePlayer(name);
     }
 
     /**
