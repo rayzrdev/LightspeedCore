@@ -79,6 +79,10 @@ public class CommandRegister {
     }
 
     public void register(ICommandHandler commandHandler) {
+        if (commandHandler.getCommandName() == null) {
+            throw new IllegalArgumentException("Command handler has null command name!");
+        }
+
         PluginCommand command = createCommand(commandHandler.getCommandName());
 
         assert command != null;

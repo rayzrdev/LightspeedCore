@@ -18,7 +18,7 @@ public class CommandWhois extends ModuleCommand<WhoisModule> {
 
     @Override
     public String getCommandName() {
-        return null;
+        return "whois";
     }
 
     @Override
