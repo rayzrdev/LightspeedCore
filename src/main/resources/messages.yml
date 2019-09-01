@@ -108,7 +108,7 @@ command:
         entry: "&c%tR &8- &e%d, %d, %d (%s)"
         none: "&cYou have not died recently!"
     whois:
-        usage: "<player<"
+        usage: "<player>"
         description: "Shows you the last known information about an offline player."
         missing-info: "&cNo data could be found about that player!"
         format:
