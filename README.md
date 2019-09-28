@@ -14,7 +14,7 @@ This is a comprehensive and modular core plugin based on [SurvivalCore](https://
 - [ ] Scoreboard
 - [ ] Events
 - [ ] Points
-- [ ] Moderation commands
+- [x] Moderation commands
 
 ## Installation
 
