@@ -31,7 +31,7 @@ public class Utils {
      */
     @SuppressWarnings("deprecated")
     public static Optional<Player> findPlayerExact(String name) {
-        return Optional.ofNullable(Bukkit.getPlayer("name"));
+        return Optional.ofNullable(Bukkit.getPlayer(name));
     }
 
     /**
