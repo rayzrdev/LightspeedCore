@@ -55,7 +55,7 @@ public class LightspeedCore extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        vaultChat = Optional.of(getServer().getServicesManager().getRegistration(Chat.class))
+        vaultChat = Optional.ofNullable(getServer().getServicesManager().getRegistration(Chat.class))
                 .map(RegisteredServiceProvider::getProvider)
                 .orElse(null);
 
