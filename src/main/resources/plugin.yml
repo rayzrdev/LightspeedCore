@@ -4,3 +4,4 @@ version: ${project.version}
 description: ${project.description}
 softdepend: [DiscordSRV]
 api-version: 1.14
+authors: [rayzr]
