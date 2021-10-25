@@ -22,9 +22,9 @@ public class ChatModule extends AbstractModule implements Listener {
         getPlugin().getServer().getPluginManager().registerEvents(this, getPlugin());
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onChat(AsyncPlayerChatEvent e) {
-        e.setCancelled(true);
+        e.getRecipients().clear();
 
         Player player = e.getPlayer();
 
